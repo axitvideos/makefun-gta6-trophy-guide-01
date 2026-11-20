@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA VI Trophy Guide &amp; Tracker — Leonida Legend</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Legend</h1>
+    <p class="subtitle">The offline guide and tracker for every GTA VI trophy — official names, descriptions and grades, a guide with named sources for each one, a roadmap to the platinum, and a checklist that remembers your progress.</p>
+  </div>
+  <div class="progress-card" id="progressCard">
+    <div class="progress-big"><span id="earnedCount">0</span><span class="of">/ 55</span></div>
+    <p class="progress-label">trophies earned</p>
+    <div class="bar"><div class="bar-fill" id="barFill" style="width:0%"></div></div>
+    <p class="progress-sub" id="progressSub">Platinum: Vice Got a Price! — 0 of 54 others earned</p>
+    <p class="grade-line" id="gradeLine"></p>
+  </div>
+</header>
+
+<nav class="views" aria-label="Views">
+  <button type="button" class="view-btn active" data-view="checklist">Checklist</button>
+  <button type="button" class="view-btn" data-view="roadmap">Roadmap to Platinum</button>
+  <button type="button" class="view-btn" data-view="missables">Missables</button>
+</nav>
+
+<section id="roadmapPanel" class="roadmap" hidden>
+  <h2>Roadmap to the platinum</h2>
+  <p class="roadmap-intro">Play it in five stages, in order. Story first — the chapter and mission trophies come free as you play — then the stranger strands, then collectibles and exploration, then activities and combat, and finally the money grinds. The platinum, <strong>Vice Got a Price!</strong>, pops with the last trophy you earn.</p>
+  <ol class="stages" id="stages"></ol>
+  <p class="roadmap-note">Counts come straight from the official descriptions: 42 Shooting Range challenges, 250 stunts, 100 WAiNK It locations, 100 vehicles, 52 areas of Leonida, 18 meditation spots, 14 drone-race locations, 20 races, 8 stranger strands, 5 bank vaults, 9 gangs, 8 garages, 3 card sets, 50 challenges, 500 choices, $250,000 laundered, $100,000 spent, 10 Scooter Bros registrations.</p>
+</section>
+
+<section id="missablesPanel" class="missables" hidden>
+  <h2>Missable trophies — do these on time</h2>
+  <p>Twelve trophies are tied to a specific moment, a partner being with you, or a one-shot setup. They are flagged <span class="flag">MISSABLE</span> in the checklist too. The rest can all be finished in free roam after the story.</p>
+  <ul class="miss-list" id="missList"></ul>
+</section>
+
+<section id="checklistPanel" class="tracker">
+  <div class="controls">
+    <label class="search">Search <input id="search" type="search" placeholder="Trophy or mission name…" autocomplete="off"></label>
+    <div class="filters" role="group" aria-label="Filter by kind">
+      <button type="button" class="filter-btn active" data-kind="all">All <span class="count" data-count="all"></span></button>
+      <button type="button" class="filter-btn" data-kind="story">Story <span class="count" data-count="story"></span></button>
+      <button type="button" class="filter-btn" data-kind="missable">Missable <span class="count" data-count="missable"></span></button>
+      <button type="button" class="filter-btn" data-kind="collectibles">Collectibles <span class="count" data-count="collectibles"></span></button>
+      <button type="button" class="filter-btn" data-kind="activities">Activities <span class="count" data-count="activities"></span></button>
+      <button type="button" class="filter-btn" data-kind="online">Online <span class="count" data-count="online"></span></button>
+    </div>
+    <label class="grade-filter">Grade
+      <select id="grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label class="toggle"><input type="checkbox" id="spoilers"> Hide story spoilers</label>
+    <label class="toggle"><input type="checkbox" id="hideEarned"> Hide earned</label>
+    <div class="io">
+      <button id="export" type="button">Export progress</button>
+      <label class="import-btn">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+      <button id="reset" type="button" class="quiet">Reset</button>
+    </div>
+  </div>
+  <p class="online-note" id="onlineNote" hidden>This list has <strong>no online trophies</strong> — every one of the 55 can be earned solo, offline. The Online filter is here so the guide stays complete if the list ever gains one.</p>
+  <p class="result-line" id="resultLine"></p>
+  <div class="layout">
+    <ul class="trophy-list" id="trophyList"></ul>
+    <aside class="detail" id="detail" aria-live="polite">
+      <p class="detail-empty">Select a trophy to read its guide and sources.</p>
+    </aside>
+  </div>
+</section>
+
+<footer>
+  <p>Official trophy names and descriptions are shown as PlayStation publishes them. Every guide is written in our own words and names its sources beside it — sources are cited, never copied. No Rockstar artwork or logos are used anywhere in this guide.</p>
+  <p class="sources-line">Sources for the trophy list and guides: Exophase — Grand Theft Auto VI trophy list; PSNProfiles — Grand Theft Auto VI trophy list; PlayStation — official trophy descriptions.</p>
+  <p class="offline-note">Fully offline: this page loads nothing from the network and saves your progress in your browser (localStorage).</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
